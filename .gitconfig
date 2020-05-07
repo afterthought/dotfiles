@@ -1,4 +1,5 @@
 [alias]
+  gui = !sh -c '/usr/local/git/libexec/git-core/git-gui'
 	# View the SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph
 	# View the current working tree status using the short format
@@ -32,6 +33,7 @@
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
+	editor = code
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
 	whitespace = space-before-tab,indent-with-non-tab,trailing-space
 
@@ -51,9 +53,7 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-[merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
+
 
 # Use `origin` as the default remote on the `master` branch in all cases
 [branch "master"]
@@ -76,3 +76,26 @@
 
 [push]
 	default = simple
+[user]
+	name = Chuck Swanberg
+	email = cswanberg@mad-swan.com
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff --new-window $LOCAL $REMOTE
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[pull]
+	rebase = true
+
+[commit]
+	template = ~/.stCommitMsg
