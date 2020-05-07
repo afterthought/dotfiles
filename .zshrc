@@ -152,8 +152,5 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.fastlane/bin:$PATH"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/chuck/.sdkman"
-[[ -s "/Users/chuck/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/chuck/.sdkman/bin/sdkman-init.sh"
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+
+export PATH=$PATH:$HOME/.local/bin
