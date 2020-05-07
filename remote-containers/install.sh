@@ -30,3 +30,9 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+
+
+ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/dotfiles/.gitattributes ~/.gitattributes
+ln -s ~/dotfiles/.gitignore ~/.gitignore
+ln -s ~/dotfiles/.zshrc ~/.zshrc
