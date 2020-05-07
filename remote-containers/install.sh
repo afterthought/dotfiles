@@ -1,7 +1,7 @@
 export ZPLUG_HOME=~/.zplug
-mkdir $ZPLUG_HOME
 git clone https://github.com/zplug/zplug $ZPLUG_HOME
-
+cd $ZPLUG_HOME
+pwd
 
 
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
