@@ -3,11 +3,10 @@ source $ZPLUG_HOME/init.zsh
 
 
 #plugins
-zplug "lukechilds/zsh-nvm"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "plugins/git",  from:oh-my-zsh
-zplug "plugins/brew", from:oh-my-zsh
+
 
 
 #Install solarized first: http://ethanschoonover.com/solarized
@@ -79,23 +78,6 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 REPORTTIME=2
 TIMEFMT="%U user %S system %P cpu %*Es total"
 
-# Base PATH
-PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin
-# Conditional PATH additions
-for path_candidate in /opt/local/sbin \
-  /Applications/Xcode.app/Contents/Developer/usr/bin \
-  /opt/local/bin \
-  /usr/local/share/npm/bin \
-  ~/.cabal/bin \
-  ~/.cargo/bin \
-  ~/.rbenv/bin \
-  ~/bin \
-  ~/src/gocode/bin
-do
-  if [ -d ${path_candidate} ]; then
-    export PATH=${PATH}:${path_candidate}
-  fi
-done
 
 
 # Yes, these are a pain to customize. Fortunately, Geoff Greer made an online
@@ -146,9 +128,6 @@ echo
 # Hook for desk activation
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/.fastlane/bin:$PATH"
 
